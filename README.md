@@ -52,13 +52,13 @@ The agent’s architecture bridges two distinct programming paradigms:
 ### Multi-Level Strategic Heuristics
 The AI provides three levels of difficulty, each utilizing progressively more sophisticated reasoning:
 
-1. **Baseline (Easy):** A stochastic approach where the agent identifies all legal moves and selects one based on a simple priority list without deep strategic analysis[cite: 115, 127].
-2. **Positional Strategy (Hard):** This level focuses on **Positional Advantage**. It categorizes board cells into specific types (e.g., COR for corners, X and C for squares adjacent to corners) and assigns them dynamic costs[cite: 122, 123, 148]. The agent prioritizes corner acquisition as a dominant strategy for victory.
-3. **Frontier-Based Strategy (Very Hard):** The most advanced heuristic, which incorporates **Frontier Minimization**. In addition to positional costs, the agent calculates the number of "frontiers" (occupied cells adjacent to empty ones) created by a move[cite: 155, 156]. By minimizing its own frontiers, the AI restricts the opponent's mobility and future strategic options.
+1. **Baseline (Easy):** A stochastic approach where the agent identifies all legal moves and selects one based on a simple priority list without deep strategic analysis.
+2. **Positional Strategy (Hard):** This level focuses on **Positional Advantage**. It categorizes board cells into specific types (e.g., COR for corners, X and C for squares adjacent to corners) and assigns them dynamic costs. The agent prioritizes corner acquisition as a dominant strategy for victory.
+3. **Frontier-Based Strategy (Very Hard):** The most advanced heuristic, which incorporates **Frontier Minimization**. In addition to positional costs, the agent calculates the number of "frontiers" (occupied cells adjacent to empty ones) created by a move. By minimizing its own frontiers, the AI restricts the opponent's mobility and future strategic options.
 
 ### Knowledge Representation
 The CLIPS engine utilizes a structured set of templates and rules to model the game environment:
-* **Cell Templates:** Define the properties of each board square, including its coordinates, content (black, white, or empty), and strategic type (COR, X, C, A, B, or F)[cite: 69, 73].
+* **Cell Templates:** Define the properties of each board square, including its coordinates, content (black, white, or empty), and strategic type (COR, X, C, A, B, or F).
 * **Cost Evaluation Rules:** Rules like `update-cost-of-cell` and `update-cost-of-certain-cell-X` dynamically adjust move priorities based on the current game step and difficulty level.
 * **Frontier Management:** Advanced rules monitor the density of the board to prevent the user from gaining a positional foothold on the edges or corners.
 
